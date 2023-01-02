@@ -21,33 +21,32 @@ th2.innerText="Delete"
 var th3=document.createElement("th")
 th3.innerText="Edit"
 
-
-
-
-
 var tbody=document.createElement("tbody")
 
 var tr2=document.createElement("tr")
 
 var td1=document.createElement("td")
-td1.innerText="Name"
+td1.innerText=""
 var td2=document.createElement("td")
-td2.innerHTML="<button>Delete</button>"
+td2.innerHTML="<button onclick=Delete()>Delete</button>"
 var td3=document.createElement("td")
-td3.innerHTML="<button>Edit</button>"
+td3.innerHTML="<button onclick=Edit()>Edit</button>"
 
 function Add(){
     var ptag2=document.getElementById("inputField").value
+    td1.innerText=ptag2
+
     array.push(ptag2)
     // toDoContainer.append(array)
     ptag1.append(array)
     inputField.value=""
     
+    
 }
 
 function Delete(){
     // toDoContainer.removeChild(toDoContainer.firstElementChild);
-    ptag1.remove();
+    td1.remove();
     // ptag1.removeChild(ptag1.firstElementChild);
 
 
