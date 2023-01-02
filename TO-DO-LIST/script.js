@@ -37,8 +37,8 @@ var td3=document.createElement("td")
 td3.innerHTML="<button>Edit</button>"
 
 function Add(){
-    var ptag=document.getElementById("inputField").value
-    array.push(ptag)
+    var ptag2=document.getElementById("inputField").value
+    array.push(ptag2)
     // toDoContainer.append(array)
     ptag1.append(array)
     inputField.value=""
