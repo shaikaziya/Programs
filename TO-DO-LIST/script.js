@@ -44,7 +44,7 @@ function add() {
 
   td1.innerText = uiInput;
   td2.innerHTML = `<button onclick=Delete('${td1.innerText}')>Delete</button>`
-  td3.innerHTML = "<button onclick=Edit()>Edit</button>";
+  td3.innerHTML = `<button onclick=Edit('${td1.innerText}')>Edit</button>`;
   tr2.setAttribute("id", td1.innerText);
   tr2.append(td1, td2, td3);  
   tbody.append(tr2);
@@ -52,12 +52,14 @@ function add() {
 }
 
 function Delete(param1) {
-   console.log("acutalattributeId  " + param1);
-    console.log(table.getAttribute("id"));
+    console.log("delete attributeId  " + param1);
     document.getElementById(param1).remove();
 }
 
-function Edit() {}
+function Edit(param1) {
+    console.log("edit attributeId  " + param1);
+    document.getElementById(param1).update();
+}
 
 table.append(tbody, thead);
 document.body.append(table);
