@@ -6,7 +6,7 @@ var ptag1 = document.getElementById("ptag");
 var array = [];
 
 var table = document.createElement("table");
-table.setAttribute("id", "table001")
+table.setAttribute("id", "table001");
 
 var thead = document.createElement("thead");
 
@@ -43,22 +43,28 @@ function add() {
   var td3 = document.createElement("td");
 
   td1.innerText = uiInput;
-  td2.innerHTML = `<button id="deleteId" onclick=Delete('${td1.innerText}')>Delete</button>`
+  td2.innerHTML = `<button id="deleteId" onclick=Delete('${td1.innerText}')>Delete</button>`;
   td3.innerHTML = `<button id="editId" onclick=Edit('${td1.innerText}')>Edit</button>`;
   tr2.setAttribute("id", td1.innerText);
-  tr2.append(td1, td2, td3);  
+  tr2.append(td1, td2, td3);
   tbody.append(tr2);
-  
 }
 
 function Delete(param1) {
-    console.log("delete attributeId  " + param1);
-    document.getElementById(param1).remove();
+  console.log("delete attributeId  " + param1);
+  document.getElementById(param1).remove();
 }
 
 function Edit(param1) {
-    console.log("edit attributeId  " + param1);
-    document.getElementById(param1).update();
+  console.log("edit attributeId  " + param1);
+  let promptvalue=prompt(`${param1}`,`${param1}`)
+  if(promptvalue!=null){
+    document.getElementById(param1).innerHTML = promptvalue;
+    console.log(promptvalue)
+  }
+
+
+  // document.getElementById(param1).update();
 }
 
 table.append(tbody, thead);
