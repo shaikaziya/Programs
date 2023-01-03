@@ -57,10 +57,22 @@ function Delete(param1) {
 
 function Edit(param1) {
   console.log("edit attributeId  " + param1);
+  document.getElementById(param1).remove();
   let promptvalue=prompt(`${param1}`,`${param1}`)
   if(promptvalue!=null){
-    document.getElementById(param1).innerHTML = promptvalue;
-    console.log(promptvalue)
+    //document.getElementById(param1).innerHTML = promptvalue;
+  var tr2 = document.createElement("tr");
+  var td1 = document.createElement("td");
+  var td2 = document.createElement("td");
+  var td3 = document.createElement("td");
+
+  td1.innerText = promptvalue;
+  td2.innerHTML = `<button id="deleteId" onclick=Delete('${td1.innerText}')>Delete</button>`;
+  td3.innerHTML = `<button id="editId" onclick=Edit('${td1.innerText}')>Edit</button>`;
+  tr2.setAttribute("id", td1.innerText);
+  tr2.append(td1, td2, td3);
+  tbody.append(tr2);
+  console.log(promptvalue)
   }
 
 
