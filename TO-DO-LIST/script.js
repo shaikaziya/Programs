@@ -43,8 +43,8 @@ function add() {
   var td3 = document.createElement("td");
 
   td1.innerText = uiInput;
-  td2.innerHTML = `<button onclick=Delete('${td1.innerText}')>Delete</button>`
-  td3.innerHTML = `<button onclick=Edit('${td1.innerText}')>Edit</button>`;
+  td2.innerHTML = `<button id="deleteId" onclick=Delete('${td1.innerText}')>Delete</button>`
+  td3.innerHTML = `<button id="editId" onclick=Edit('${td1.innerText}')>Edit</button>`;
   tr2.setAttribute("id", td1.innerText);
   tr2.append(td1, td2, td3);  
   tbody.append(tr2);

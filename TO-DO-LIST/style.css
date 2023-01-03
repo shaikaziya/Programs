@@ -9,6 +9,18 @@ html, body {
 }
 table{
     border:2px solid black;
-
-
+}
+body{
+    background-color: #abf5f5;
+}
+#addToDo{
+    background-color: #38f23d;
+}
+#deleteId{
+    background-color:#ed0c48
+    ;
+}
+#editId{
+    background-color:#0accf7
+    ;
 }
